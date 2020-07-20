@@ -1,8 +1,8 @@
 export * from './validators';
 
-export const log = (...args: any[]): void => {
+export const debug = (label: string) => (...args: any[]): void => {
   if (process.env.NODE_ENV === 'test') return;
-  console.log(`AuthService:`, ...args);
+  console.log(`${label}:`, ...args);
 };
 
 export const signJwt = async (id: string, email: string) => {
